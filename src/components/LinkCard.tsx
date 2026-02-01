@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { LinkItem } from "../data/links";
 import { Card, CardHeader, CardTitle, CardDescription } from "./ui/card";
-import { Button } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { cn } from "../lib/utils";
 
@@ -35,11 +35,14 @@ export default function LinkCard({ item, index }: LinkCardProps) {
       className="animate-fadeUp"
       style={{ animationDelay: `${260 + index * 80}ms` }}
     >
-      <Button
-        asChild
-        variant="outline"
-        size="lg"
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         className={cn(
+          buttonVariants({ variant: "outline", size: "lg" }),
           "w-full h-auto rounded-xl border-zinc-700 bg-zinc-800/50 px-0 py-0",
           "text-left justify-start gap-0",
           "transition-all duration-300 ease-out",
@@ -50,11 +53,6 @@ export default function LinkCard({ item, index }: LinkCardProps) {
             "-translate-y-[2px]",
           ]
         )}
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
       >
         <Card className="border-0 bg-transparent shadow-none w-full">
           <CardHeader className="p-4 flex-row items-center gap-4 space-y-0">
@@ -103,7 +101,7 @@ export default function LinkCard({ item, index }: LinkCardProps) {
             </span>
           </CardHeader>
         </Card>
-      </Button>
+      </a>
     </div>
   );
 }
