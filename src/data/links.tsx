@@ -60,7 +60,7 @@ export const links: LinkItem[] = [
   {
     id: "discord",
     label: "Entre no meu Discord",
-    url: "https://discord.gg/4cakJ76Y",
+    url: "https://discord.gg/28t2E3JV9c",
     icon: <FaDiscord size={20} />
   },
 ];
