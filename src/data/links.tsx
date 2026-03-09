@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaTwitch } from "react-icons/fa";
 import { Mail } from "lucide-react";
 
 export interface LinkItem {
@@ -56,6 +56,13 @@ export const links: LinkItem[] = [
     url: "mailto:contato.matheusccp2@gmail.com",
     icon: <Mail size={20} />,
     description: "contato.matheusccp2@gmail.com",
+  },
+  {
+    id: "twitch",
+    label: "Vem pra Live!",
+    url: "https://www.twitch.tv/theuzinncs",
+    icon: <FaTwitch size={20} />,
+    description: "Gameplays duvidosas é aqui!",
   },
   {
     id: "discord",
